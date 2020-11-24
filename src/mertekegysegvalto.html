@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VT | Mértékegység átváltó</title>
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+  </head>
+
+  <body>
+
+<nav>
+
+<p>Villanyszerelők tudástára</p>
+<ul>
+<li ><a href="index.html">Kezdőlap</a></li>  
+<li><a href="#">Fogalmak</a>
+  <ul>
+    <li><a href="feszultseg.php">Feszültség</a></li>
+    <li><a href="aram.php">Áram</a></li>
+    <li><a href="ellenallas.html">Ellenállás</a></li>
+    <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+  </ul>
+</li>  
+<li><a href="#">Mértékegységek</a>
+<ul>
+  <li><a href="amper.php">Amper (A)</a></li>
+    <li><a href="ohm.php">Ohm (Ω)</a></li>
+    <li><a href="volt.php">Volt (V)</a></li>
+    <li><a href="watt.php">Watt (W)</a></li>
+</ul>
+
+
+</li>  
+<li><a href="rajzjelek.html">Rajzjelek</a></li>  
+<li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+<li><a href="#">Törvények</a>
+<ul>
+  <li><a href="ohmtorveny.html">Ohm törvénye</a></li>
+  <li><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+</ul>
+</li>
+<li><a href="#">Kalkulátorok</a>
+<ul>
+  <li><a href="szamologep.html">Áramfogyasztás</a></li>
+  <li><a href="villanyszamla.html">Villanyszámla</a></li>
+</ul>
+<li class="active"><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+</li> 
+
+</ul>
+
+</nav>
+
+
+<div id="szoveg">
+
+<h1>Mértékegység átváltó</h1>
+
+<p>&nbsp;</p>
+
+<form name="valt" >
+<table class="fogyasztas">
+<tbody>
+<tr>
+    <td>Érték</td>
+    <td class="ertek"><input name="ertek" type="number" class="intext"></td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><input onclick="valtas()" type="button" value="Számitás" class="fogyasztasgomb"> <input type="reset" value="Újrakezdés" class="fogyasztasgomb"></td>
+</tr>
+<tr>
+    <td>Nano</td>
+    <td class="ertek"><input name="nanoertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">n.</td>
+</tr>
+
+<tr>
+    <td>Mikro</td>
+    <td class="ertek"><input name="mikroertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">μ.</td>
+</tr>
+<tr>
+    <td>Milli</td>
+    <td class="ertek"><input name="milliertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">m.</td>
+</tr>
+<tr>
+    <td>Kilo</td>
+    <td class="ertek"><input name="kiloertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">k.</td>
+</tr>
+
+<tr>
+    <td>Mega</td>
+    <td class="ertek"><input name="megaertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">M.</td>
+</tr>
+<tr>
+    <td>Giga</td>
+    <td class="ertek"><input name="gigaertek" type="number" class="intext"></td>
+    <td class="mertekegyseg">G.</td>
+</tr>
+
+</tbody>
+
+</table>
+</form>
+
+<p>&nbsp;</p>
+<h2>A mértékegységek után lévő pont (.) behelyettesíthető Volt, Watt, Amper, Ohm-al.</h2>
+
+<script>
+
+    function valtas(){
+    
+        ertek=document.valt.ertek.value;
+    
+        nano=ertek*1000000000;
+       mikro=ertek*1000000;
+        milli=ertek*1000;
+        kilo=ertek*0.001;
+        mega=ertek*0.000001;
+        giga=ertek*0.000000001;
+    
+        document.valt.nanoertek.value=nano;
+        document.valt.mikroertek.value=mikro;
+        document.valt.milliertek.value=milli;
+        document.valt.kiloertek.value=kilo;
+        document.valt.megaertek.value=mega;
+        document.valt.gigaertek.value=giga;
+    }
+    
+    </script>
+
+
+      <!-- lap tetejére gomb -->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>     
+        <script>        
+            var mybutton = document.getElementById("myBtn");            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+</script>
+
+</div>
+
+</body>
+  
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+
+    <title>VT | Ellenállás </title>
+
+    <body>
+
+      <nav>
+
+        <p>Villanyszerelők tudástára</p>
+        <ul>
+        <li ><a href="index.html">Kezdőlap</a></li>  
+        <li><a href="#">Fogalmak</a>
+          <ul>
+            <li><a href="feszultseg.php">Feszültség</a></li>
+            <li><a href="aram.php">Áram</a></li>
+            <li class="active"><a href="ellenallas.html">Ellenállás</a></li>
+            <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+          </ul>
+        </li>  
+        <li><a href="#">Mértékegységek</a>
+        <ul>
+          <li><a href="amper.php">Amper (A)</a></li>
+            <li><a href="ohm.php">Ohm (Ω)</a></li>
+            <li><a href="volt.php">Volt (V)</a></li>
+            <li><a href="watt.php">Watt (W)</a></li>
+        </ul>
+        
+        
+        </li>  
+        <li><a href="rajzjelek.html">Rajzjelek</a></li>  
+        <li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+        <li><a href="#">Törvények</a>
+        <ul>
+          <li><a href="ohmtorveny.html">Ohm törvénye</a></li>
+          <li><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Kalkulátorok</a>
+        <ul>
+          <li><a href="szamologep.html">Áramfogyasztás</a></li>
+          <li><a href="villanyszamla.html">Villanyszámla</a></li>
+        </ul>
+        <li><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+        </li> 
+        
+        </ul>
+        
+        </nav>
+        <div id="szoveg">
+<h1>Elektromos ellenállás</h1>
+
+<p>Az elektromos ellenállás azt mutatja meg, hogy egy adott vezetőben mennyire könnyen folyik az elektromos áram, 
+    a szabadon mozgó töltéshordozók mennyire könnyen mozoghatnak a vezető belsejében.</p>
+    <p>&nbsp;</p>
+    <p>A feszültség és az áramerősség egymással egyenesen arányos, tehát hányadosuk állandó.</p>
+<p>&nbsp;</p>
+
+<p>
+
+  \[R = {U \over I}\]
+</p>
+
+<p>&nbsp;</p>
+<p>Ez az állandó a fogyasztóra jellemző adat, s a fogyasztó elektromos ellenállásának nevezzük. 
+    <p>&nbsp;</p>
+   <p> Jele: R, mértékegysége Georg Ohm német fizikus emlékére az Ohm, amelynek jele a görög ábécé Ω (omega) betűje. </p>
+   <p>&nbsp;</p>
+   <p> Egy fogyasztó ellenállása 1 , ha 1 V feszültség hatására 1 A erősségű áram folyik keresztül rajta.</p>
+   <p>&nbsp;</p>
+   
+   <p>A feszültség és az áramerősség mérésével, meghatározható valamely áramköri elem ellenállása</p>
+   <p>&nbsp;</p>
+   
+   <p>
+
+    \[R = {U * I}\]
+  </p>
+  
+
+   <p>&nbsp;</p>
+
+   <p>Az áramkör minden elemének van elektromos ellenállása. 
+       A kísérletekben, mérésekben használt vezetékek ellenállása néhány tized ohm, ami általában töredéke a fogyasztóellenállásának, tehát általában elhanyagolható.</p>
+
+        </div>
+
+</div>
+
+
+      <!-- lap tetejére gomb-->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>
+      
+        <script>
+        
+            var mybutton = document.getElementById("myBtn");
+            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
+
+    
+
+        </body>
+</html>

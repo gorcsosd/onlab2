@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+    <title>VT | Áramfogyasztás számító</title>
+
+    <body>
+
+        <nav>
+
+            <p>Villanyszerelők tudástára</p>
+            <ul>
+            <li><a href="index.html">Kezdőlap</a></li>  
+            <li><a href="#">Fogalmak</a>
+              <ul>
+                <li><a href="feszultseg.php">Feszültség</a></li>
+                <li><a href="aram.php">Áram</a></li>
+                <li><a href="ellenallas.html">Ellenállás</a></li>
+                <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+              </ul>
+            </li>  
+            <li><a href="#">Mértékegységek</a>
+            <ul>
+              <li><a href="amper.php">Amper (A)</a></li>
+                <li><a href="ohm.php">Ohm (Ω)</a></li>
+                <li><a href="volt.php">Volt (V)</a></li>
+                <li><a href="watt.php">Watt (W)</a></li>
+            </ul>
+            
+            
+            </li>  
+            <li><a href="rajzjelek.html">Rajzjelek</a></li>  
+            <li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+            <li><a href="#">Törvények</a>
+            <ul>
+              <li ><a href="ohmtorveny.html">Ohm törvénye</a></li>
+              <li><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Kalkulátorok</a>
+            <ul>
+              <li class="active"><a href="szamologep.html">Áramfogyasztás</a></li>
+              <li><a href="villanyszamla.html">Villanyszámla</a></li>
+            </ul>
+            <li><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+            </li> 
+            
+            </ul>
+            
+            </nav>
+
+<div id="szoveg">
+
+
+    <h1>Áramfogyasztás számító</h1>
+
+    <form name="aram" autocomplete="off">
+        <table class="fogyasztas">
+            <tbody>
+            <tr>
+                <td>Teljesítmény:</td>
+                <td class="ertek"><input name="teljesitmeny" type="number" class="intext"></td>
+                <td><select name="valasztas">
+                    <option selected="selected">watt (W)</option>
+                    <option>kilowatt (kW)</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Napi működés:</td>
+                <td class="ertek"><input name="napiMukodes" type="number" class="intext"></td>
+                <td class="mertekegyseg">óra/nap</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2"><input onclick="FogyasztasSzamolas()" type="button" value="Számitás" class="fogyasztasgomb"> <input type="reset" value="Újrakezdés" class="fogyasztasgomb"></td>
+            </tr>
+            <tr>
+                <td>Napi fogyasztás:</td>
+                <td class="ertek"><input name="napiFogyasztas" type="text" class="outtext" readonly=""></td>
+                <td class="mertekegyseg">kWh/nap</td>
+            </tr>
+            <tr>
+                <td>Havi fogyasztás:</td>
+                <td class="ertek"><input name="haviFogyasztas" type="text" class="outtext" readonly=""></td>
+                <td class="mertekegyseg">kWh/hónap</td>
+            </tr>
+            <tr>
+                <td>Évi fogyasztás:</td>
+                <td class="ertek"><input name="eviFogyasztas" type="text" class="outtext" readonly=""></td>
+                <td class="mertekegyseg">kWh/év</td>
+            </tr>
+        </tbody></table>
+        </form>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+      <!-- lap tetejére gomb -->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>
+      
+        <script>
+        
+            var mybutton = document.getElementById("myBtn");
+            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+</script>
+
+
+
+<script>
+    		function FogyasztasSzamolas()
+		{
+			valasztas = document.aram.valasztas.selectedIndex;
+			teljesitmeny = document.aram.teljesitmeny.value;
+            mukodes = document.aram.napiMukodes.value;
+            if( teljesitmeny=='' || mukodes=='' ) return;
+            if( valasztas==0 ) teljesitmeny/=1000;
+			kwh_nap   = teljesitmeny*mukodes;
+			kwh_honap = kwh_nap*30;
+			kwh_ev  = kwh_nap*365;
+           
+        
+			document.aram.napiFogyasztas.value  = kwh_nap;
+			document.aram.haviFogyasztas.value  = kwh_honap;
+			document.aram.eviFogyasztas.value = kwh_ev;
+		}
+</script>
+
+
+        </body>
+        </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+    <title>VT | Villanyszámla kalkulátor</title>
+
+    <body>
+
+        <nav>
+
+            <p>Villanyszerelők tudástára</p>
+            <ul>
+            <li><a href="index.html">Kezdőlap</a></li>  
+            <li><a href="#">Fogalmak</a>
+              <ul>
+                <li><a href="feszultseg.php">Feszültség</a></li>
+                <li><a href="aram.php">Áram</a></li>
+                <li><a href="ellenallas.html">Ellenállás</a></li>
+                <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+              </ul>
+            </li>  
+            <li><a href="#">Mértékegységek</a>
+            <ul>
+              <li><a href="amper.php">Amper (A)</a></li>
+                <li><a href="ohm.php">Ohm (Ω)</a></li>
+                <li><a href="volt.php">Volt (V)</a></li>
+                <li><a href="watt.php">Watt (W)</a></li>
+            </ul>
+            
+            
+            </li>  
+            <li ><a href="rajzjelek.html">Rajzjelek</a></li>  
+            <li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+            <li><a href="#">Törvények</a>
+            <ul>
+              <li><a href="ohmtorveny.html">Ohm törvénye</a></li>
+              <li><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Kalkulátorok</a>
+            <ul>
+              <li><a href="szamologep.html">Áramfogyasztás</a></li>
+              <li class="active"><a href="villanyszamla.html">Villanyszámla</a></li>
+            </ul>
+            <li><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+            </li> 
+            
+            </ul>
+            
+            </nav>
+            
+
+<div id="szoveg">
+
+
+    <h1>Villanyszámla kalkulátor</h1>
+
+    <form name="villany" autocomplete="off">
+        <table class="fogyasztas">
+            <tbody>
+                <tr> 
+                   <td>Árszabás szerint:</td>
+                    <td><select name="arszabas">                        
+                        <option >Normál</option>
+                        <option>Kedvezményes</option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td>Szolgáltató:</td>
+                <td><select name="szolgaltato" onchange="kivalasztott()" autofocus="">
+                    <option>--Választás--</option>
+                    <option >E.ON </option>
+                    <option >ELMŰ</option>
+                    <option >ÉMÁSZ</option>
+                    <option>NKM Nemzeti Közművek</option>                    
+                </select></td>
+            </tr>
+
+
+          
+            <tr>
+                <td>Elfogyaszott energia mennyisége</td>
+                <td class="ertek"><input name="energia" type="number" class="intext"></td>
+                <td>kWh</td>
+            </tr>
+
+            <tr>
+                <td>Áramdíj: </td>
+                <td class="ertek"><input name="dij" type="number" class="intext"></td>
+                <td>Ft/kWh</td>
+            </tr>
+
+        
+                 
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2"><input onclick="villanyszamla()" type="button" value="Számitás" class="fogyasztasgomb"> <input type="reset" value="Újrakezdés" class="fogyasztasgomb"></td>
+            </tr>
+            <tr>
+                <td>Villamosenergia ára:</td>
+                <td class="ertek"><input name="ar" type="text" class="outtext" readonly=""></td>
+                <td class="mertekegyseg">Ft</td>
+            </tr>
+        </tbody></table>
+        </form>
+
+        <script>
+function kivalasztott()
+		{
+      arszabas=document.villany.arszabas.selectedIndex;
+          if(arszabas!=0) 
+            {   look=[35.31,36.22, 36 , 36.398];
+                valasztott = document.villany.szolgaltato.selectedIndex;
+			if(valasztott==0) return;
+			document.villany.dij.value = look[valasztott-1];
+            } else {
+			look=[37.74, 37.54, 37.31, 37.516];
+			valasztott = document.villany.szolgaltato.selectedIndex;
+			if(valasztott==0) return;
+			document.villany.dij.value = look[valasztott-1];
+            }
+		}
+
+
+        function villanyszamla()
+        {         
+      energia=document.villany.energia.value;
+      dij=document.villany.dij.value;
+        if(energia=='' || dij=='' ) return;
+    
+      ar=energia*dij;
+
+      document.villany.ar.value=ar;
+ }
+
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- lap tetejére gomb -->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>
+      
+        <script>
+        
+            var mybutton = document.getElementById("myBtn");
+            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+</script>
+
+
+
+
+        </body>
+        </html>

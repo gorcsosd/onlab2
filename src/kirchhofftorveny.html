@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+
+    <title>VT | Kirchhoff törvénye</title>
+
+    <body>
+
+      <nav>
+
+        <p>Villanyszerelők tudástára</p>
+        <ul>
+        <li><a href="index.html">Kezdőlap</a></li>  
+        <li><a href="#">Fogalmak</a>
+          <ul>
+            <li><a href="feszultseg.php">Feszültség</a></li>
+            <li><a href="aram.php">Áram</a></li>
+            <li><a href="ellenallas.html">Ellenállás</a></li>
+            <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+          </ul>
+        </li>  
+        <li><a href="#">Mértékegységek</a>
+        <ul>
+          <li><a href="amper.php">Amper (A)</a></li>
+            <li><a href="ohm.php">Ohm (Ω)</a></li>
+            <li><a href="volt.php">Volt (V)</a></li>
+            <li><a href="watt.php">Watt (W)</a></li>
+        </ul>
+        
+        
+        </li>  
+        <li><a href="rajzjelek.html">Rajzjelek</a></li>  
+        <li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+        <li><a href="#">Törvények</a>
+        <ul>
+          <li ><a href="ohmtorveny.html">Ohm törvénye</a></li>
+          <li class="active"><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Kalkulátorok</a>
+        <ul>
+          <li><a href="szamologep.html">Áramfogyasztás</a></li>
+          <li><a href="villanyszamla.html">Villanyszámla</a></li>
+        </ul>
+        <li><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+        </li> 
+        
+        </ul>
+        
+        </nav>
+
+        <div id="szoveg">
+<h1>Kirchhoff törvénye</h1>
+<p>A Kirchhoff-törvények a villamosságtanban a töltés és az energia megmaradását tárgyalják</p>
+
+<h2>Kirchhoff I. törvénye: A csomóponti törvény</h2>
+<p>A csomóponti törvény párhuzamos (elágazó) áramkörökre vonatkozik. Az elágazásnál csomópont keletkezik. 
+    A törvény értelmében a csomópontba befolyó áramok összege megegyezik az onnan elfolyó áramok összegével.
+     A törvény alapja az, hogy egy villamos hálózat csomópontjaiban nincs töltésfelhalmozódás (forrásmentes hely).</p>
+
+     <p>&nbsp;</p>
+<img src="../images/kirchhoff1.png" class="center" width="50%">
+<p>Bármely csomópontba befolyó és onnan elfolyó áramok előjelhelyesen vett összege nulla. Ha a befolyó áramot pozitívnak, az elfolyót negatívnak vesszük, akkor:
+    -i1 + i2 - i4 + i3 = 0
+    Ebből következik, hogy
+    i1 + i4 = i2 + i3</p>
+
+    <h2>Kirchhoff II. törvénye: A huroktörvény </h2>
+    <p>Sorosan kapcsolt áramköri elemekre vonatkozik. A törvény értelmében bármely zárt hurokban a feszültségek előjeles összege nulla.</p>
+    <p>&nbsp;</p>
+    <p>Az előjel megállapítása úgy történik, hogy egy tetszőleges irányítású "körüljárási irányt" veszünk fel. 
+        A körüljárási irányt egy be nem záródó körvonal végén a nyíl jelzi. Ha az áramkör csak egy hurokból áll, a kör középpontjába írt "+" mutatja, hogy az ilyen irányú feszültségeket tekintjük pozitív előjelűnek 
+        (azok a feszültségek pedig, melyek iránya a körüljárási iránnyal ellentétes, negatív előjelűek). 
+        Ha az áramkör több hurokból áll, a kör középpontjába a hurok sorszáma kerül. Zárt hurokban a feszültségforrások összege megegyezik a feszültségesések összegével.</p>
+        <p>&nbsp;</p>
+
+        <img src="../images/kirchhoff2.jpg" class="center">
+        <p>&nbsp;</p>
+        <p>A körüljárási irányt az óramutató járásával megegyezőnek választottuk. Az ezzel megegyező irányú részfeszültségek pozitívak:
+            – Ug + U1 + U2 = 0
+            Ebből következik, hogy
+            Ug = U1 + U2</p>
+
+            <p>&nbsp;</p>
+        </div>
+
+</div>
+
+
+      <!-- lap tetejére gomb-->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>
+      
+        <script>
+        
+            var mybutton = document.getElementById("myBtn");
+            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
+
+          
+        </body>
+</html>

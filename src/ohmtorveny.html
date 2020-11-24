@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style/villany.css">
+    <link rel="icon" type="image/png" href="../images/ikon.png" sizes="32x32">
+
+    <title>VT | Ohm törvénye</title>
+
+    <body>
+
+      <nav>
+
+        <p>Villanyszerelők tudástára</p>
+        <ul>
+        <li><a href="index.html">Kezdőlap</a></li>  
+        <li><a href="#">Fogalmak</a>
+          <ul>
+            <li><a href="feszultseg.php">Feszültség</a></li>
+            <li><a href="aram.php">Áram</a></li>
+            <li><a href="ellenallas.html">Ellenállás</a></li>
+            <li><a href="teljesitmeny.html">Teljesítmény</a></li>
+          </ul>
+        </li>  
+        <li><a href="#">Mértékegységek</a>
+        <ul>
+          <li><a href="amper.php">Amper (A)</a></li>
+            <li><a href="ohm.php">Ohm (Ω)</a></li>
+            <li><a href="volt.php">Volt (V)</a></li>
+            <li><a href="watt.php">Watt (W)</a></li>
+        </ul>
+        
+        
+        </li>  
+        <li><a href="rajzjelek.html">Rajzjelek</a></li>  
+        <li><a href="kepletek.php">Képletek és összefüggések</a></li>  
+        <li><a href="#">Törvények</a>
+        <ul>
+          <li class="active"><a href="ohmtorveny.html">Ohm törvénye</a></li>
+          <li><a href="kirchhofftorveny.html">Kirchhoff törvénye</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Kalkulátorok</a>
+        <ul>
+          <li><a href="szamologep.html">Áramfogyasztás</a></li>
+          <li><a href="villanyszamla.html">Villanyszámla</a></li>
+        </ul>
+        <li><a href="mertekegysegvalto.html">Mértékegység átváltó</a></li>  
+        </li> 
+        
+        </ul>
+        
+        </nav>
+
+        <div id="szoveg">
+<h1>Ohm törvénye</h1>
+<h2>A törvény</h2>
+<p>Az áramkörben folyó áram erőssége függ az alkalmazott áramforrás feszültségétől. 
+    Könnyen elvégezhető kísérlettel mérhetjük az áramkörbe kapcsolt fogyasztón a feszültséget és a feszültség hatására rajta átfolyó áram erősségét,
+     és táblázatban vagy grafikonon is vizsgálhatjuk a feszültség-áramerősség függvényt!</p>
+<p>&nbsp;</p>
+<p>Ábrázolva az áramerősséget a feszültség függvényében, egyenest kapunk. Ez azt mutatja, hogy az áramerősség egyenesen arányos a feszültséggel.
+     Ezt a törvényszerűséget Georg Ohm német tudós határozta meg először: az áramkörbe kapcsolt fogyasztó sarkain mérhető feszültség, 
+    és a feszültség hatására a fogyasztón átfolyó áram erőssége egyenesen arányos, ha a fogyasztó hőmérséklete állandó.
+     <p>&nbsp;</p>
+  <img src="../images/ohm1.jpg" class="center">
+   <p>&nbsp;</p>
+
+ 
+      </div>
+
+</div>
+
+      <!-- lap tetejére gomb-->
+
+      <button onclick="topFunction()" id="myBtn">Lap tetejére</button>
+      
+        <script>
+        
+            var mybutton = document.getElementById("myBtn");
+            
+            // Ha lejjebb tekerünk az oldalon akkor jelenik meg a gomb
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
+
+        </body>
+</html>
